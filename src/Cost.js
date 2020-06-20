@@ -19,7 +19,7 @@ const getName = (cost) => {
   return `ms ms-${cost} ms-cost ms-shadow`
 }
 
-const CastingCost = ({ cost }) => {
+export const CastingCost = ({ cost }) => {
   const c = cost.split('')
   console.log('cost', cost, 'c', c)
   return (

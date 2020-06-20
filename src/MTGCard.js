@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import CastingCost from './Cost.js'
-import { normalize } from 'styled-normalize'
 import greenBG from './bg/green.png'
 import blueBG from './bg/blue.png'
 import redBG from './bg/red.png'
@@ -74,8 +73,6 @@ const SetIcon = styled.img`
   align-self: center;
 `
 const CardRoot = styled.div`
-  ${normalize}
-  font-family: keyrune;
   border: 1px solid black;
   width: 500px;
   height: 700px;
@@ -134,7 +131,7 @@ const Art = ({ image_url, color }) => {
   console.log('art', image_url, color)
   return (
     <ImageBox color={color}>
-      <Img src={image_url} alt='art' />
+      <Img src={image_url} alt="art" />
     </ImageBox>
   )
 }
@@ -225,7 +222,7 @@ const getBG = (color) => {
   }
 }
 
-const MTGCard = ({
+export const MTGCard = ({
   image_url,
   set_url,
   title,
@@ -245,11 +242,11 @@ const MTGCard = ({
             <BigWords>{title}</BigWords>
             {cost && <CastingCost cost={cost} />}
           </TypeLine>
-          <Art image_url={image_url} alt='art' color={color} />
+          <Art image_url={image_url} alt="art" color={color} />
 
           <MiddleTypeLine color={color}>
             <BigWords>{type}</BigWords>
-            <SetIcon src={set_url} alt='OGWIcon' />
+            <SetIcon src={set_url} alt="OGWIcon" />
           </MiddleTypeLine>
 
           <TextBox color={color}>

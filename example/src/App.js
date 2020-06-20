@@ -23,6 +23,16 @@ const Item = styled.div`
 
 const premades = [
   {
+    image_url: 'https://i.redd.it/sw8xl7bxutk31.jpg',
+    set_url:
+      'https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=EVE&size=small&rarity=C',
+    color: 'blue',
+    title: 'Banishing Knack',
+    text: `Until end of turn, target creature gains "{tap}: Return target nonland permanent to its owner's hand."`,
+    type: 'Instant',
+    flavor: `Suddenly he realized that everything was connected by invisible strings, strings that could be pulled—or cut.`,
+  },
+  {
     image_url:
       'https://magicuntapped.com/media/k2/items/cache/e2bf3b11df0b872112757f1c2fee6e32_XL.jpg',
     set_url:
@@ -73,7 +83,7 @@ const premades = [
   },
 ]
 
-const initialState = premades[2]
+const initialState = premades[0]
 
 const App = () => {
   const [cardState, setCardState] = React.useState(initialState)
@@ -128,8 +138,8 @@ const App = () => {
           <br />
           <select
             value={cardState.color}
-            name='color'
-            id='colors'
+            name="color"
+            id="colors"
             onChange={update}
           >
             {cardColors.map((color, idx) => {
@@ -145,9 +155,9 @@ const App = () => {
           <label>Title</label>
           <br />
           <input
-            type='text'
-            name='title'
-            size='50'
+            type="text"
+            name="title"
+            size="50"
             value={cardState.title}
             onChange={update}
           />
@@ -156,8 +166,8 @@ const App = () => {
           <label>Casting Cost</label>
           <br />
           <input
-            type='text'
-            name='cost'
+            type="text"
+            name="cost"
             value={cardState.cost}
             onChange={update}
           />
@@ -166,8 +176,8 @@ const App = () => {
           <label>Type</label>
           <br />
           <input
-            type='text'
-            name='type'
+            type="text"
+            name="type"
             value={cardState.type}
             onChange={update}
           />
@@ -176,9 +186,9 @@ const App = () => {
           <label>Image URL</label>
           <br />
           <input
-            type='url'
-            size='50'
-            name='image_url'
+            type="url"
+            size="50"
+            name="image_url"
             value={cardState.image_url}
             onChange={update}
           />
@@ -187,7 +197,7 @@ const App = () => {
           <label>Text P1</label>
           <br />
           <TextBox
-            name='text'
+            name="text"
             value={cardState.text === undefined ? '' : cardState.text}
             onChange={update}
           />
@@ -196,7 +206,7 @@ const App = () => {
           <label>Text N</label>
           <br />
           <TextBox
-            name='textN'
+            name="textN"
             value={cardState.textN === undefined ? '' : cardState.textN}
             onChange={update}
           />
@@ -205,7 +215,7 @@ const App = () => {
           <label>Flavor</label>
           <br />
           <TextBox
-            name='flavor'
+            name="flavor"
             value={cardState.flavor === undefined ? '' : cardState.flavor}
             onChange={update}
           />
@@ -213,7 +223,7 @@ const App = () => {
         <Item>
           <label>Premade Cards</label>
           <br />
-          <select name='premades' id='premades-cards' onChange={update}>
+          <select name="premades" id="premades-cards" onChange={update}>
             {premades.map((card, idx) => {
               return (
                 <option key={`${idx}-premades`} value={idx}>
