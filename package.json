@@ -1,5 +1,5 @@
 {
-  "name": "react-mtg-cards",
+  "name": "@guygrigsby/react-mtg-cards",
   "version": "1.1.5",
   "description": "Create custom Magic: The Gathering Cards in React",
   "author": "guygrigsby",
@@ -10,6 +10,9 @@
   "source": "src/MTGCard.js",
   "engines": {
     "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
