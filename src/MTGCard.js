@@ -29,10 +29,10 @@ const BottomLeft = styled.div`
 
 const BottomRight = styled.div`
   flex: 1;
-  text-align: right;
   font-size: 10px;
   position: relative;
   top: 6px;
+  text-align: right;
 `
 const BottomCenter = styled.div`
   border-radius: 60%;
@@ -90,7 +90,7 @@ const CardRoot = styled.div`
 const Frame = styled.div`
   z-index: 1;
   position: relative;
-  height: 108%;
+  height: 110%;
   max-width: 97%;
   left: 1%;
   top: 0.5%;
@@ -126,6 +126,7 @@ const ImageBox = styled.div`
 `
 const Img = styled.img`
   width: 100%;
+  height: auto;
 `
 const Art = ({ image_url, color }) => {
   console.log('art', image_url, color)
@@ -263,8 +264,7 @@ export const MTGCard = ({
 
           <Footer>
             <BottomLeft>
-              <P>140/184 R</P>
-              <P>OGW &#x2022; EN Wesley Burt</P>
+              140/184 R<P>OGW &#x2022; EN Wesley Burt</P>
             </BottomLeft>
 
             <BottomCenter />

@@ -44,7 +44,7 @@ const premades = [
   },
   {
     image_url:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyB8gFaZJHawYi1DSwgDD-sgCzBr5a71ddtSzkQtyRY4GIPFQA&usqp=CAU',
+      'https://upload.wikimedia.org/wikipedia/commons/9/9f/Pahoeoe_fountain_edit2.jpg',
     set_url: 'https://image.ibb.co/kzaLjn/OGW_R.png',
     color: 'red',
     title: 'Lavaflow',
@@ -83,7 +83,7 @@ const premades = [
   },
 ]
 
-const initialState = premades[0]
+const initialState = premades[3]
 
 const App = () => {
   const [cardState, setCardState] = React.useState(initialState)

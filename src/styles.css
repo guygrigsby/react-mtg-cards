@@ -56,3 +56,7 @@ body* > {
 
 @import "https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css";
 @import "https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.css";
+
+body* > {
+  box-sizing: border-box;
+}
