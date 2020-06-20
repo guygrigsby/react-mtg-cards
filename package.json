@@ -1,6 +1,6 @@
 {
   "name": "react-mtg-cards",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create custom Magic: The Gathering Cards in React",
   "author": "guygrigsby",
   "license": "MIT",
