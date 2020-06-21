@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const ManaIcon = styled.i``
+const ManaIcon = styled.i`
+  width: 1.3em;
+`
 
 const Cost = styled.div`
+  font-size: 1.2em;
   padding: 0 3px 0 0;
 `
 

@@ -65,18 +65,16 @@ export const P = styled.div`
 export const FlavorText = styled(Description)`
   font-style: italic;
 `
-export const BigWords = styled.h1`
+export const BigWords = styled.h2`
   font-family: 'Belaren Bold';
-  font-size: 1.3em;
+  font-stretch: semi-expanded;
   margin: 5px 0 5px 5px;
-  font-weight: 600;
 `
 export const Title = styled(BigWords)`
-  font-size: 1.4em;
-  font-weight: 800;
+  font-size: 1.6em;
 `
 export const SetIcon = styled.img`
-  height: 25px;
+  height: 30px;
   overflow: hidden;
   margin-right: 10px;
   align-self: center;
@@ -122,16 +120,6 @@ export const Background = styled.div`
   z-index: 0;
 `
 
-//export const ImageBox = styled.div`
-//  display: flex;
-//  height: 40%;
-//  flex: 1 1 auto
-//  width: auto;
-//  margin: 0 10px;
-//  overflow: hidden;
-//  box-shadow: 0 0 0 2px #171314, 0 0 0 5px ${(props) => getCC(props.color)},
-//    -3px 3px 2px 5px #171314;
-//`
 export const Img = styled.img`
   flex: 0 0 48%;
   object-fit: cover;
