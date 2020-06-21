@@ -71,6 +71,10 @@ export const BigWords = styled.h1`
   margin: 5px 0 5px 5px;
   font-weight: 600;
 `
+export const Title = styled(BigWords)`
+  font-size: 1.4em;
+  font-weight: 800;
+`
 export const SetIcon = styled.img`
   height: 25px;
   overflow: hidden;
@@ -134,7 +138,8 @@ export const Img = styled.img`
   overflow: hidden;
   position: relative;
   margin: 0 10px;
-  box-shadow: 0 0 0 2px #171314, 0 0 0 5px ${(props) => getCC(props.color)};
+  box-shadow: 0 0 0 2px #171314, 0 0 0 5px ${(props) => getCC(props.color)},
+    -3px 3px 2px 5px #171314;
 `
 export const Art = ({ image_url, color }) => {
   console.log('art', image_url, color)
@@ -163,7 +168,7 @@ export const TextBox = styled.div`
 export const TypeLine = styled.div`
   border-bottom: 4px solid #a9a9a9;
   border-left: 2px solid #a9a9a9;
-  border-top: 1px solid #fff;
+  border-top: 2px solid #fff;
   border-right: 1px solid #fff;
   box-shadow: 0 0 0 2px #171314, 0 0 0 5px ${(props) => getCC(props.color)},
     -3px 3px 2px 5px #171314;

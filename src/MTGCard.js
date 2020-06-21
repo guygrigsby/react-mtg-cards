@@ -18,6 +18,7 @@ import {
   BottomCenter,
   BottomRight,
   Description,
+  Title,
 } from './styles'
 import '@saeris/typeface-beleren-bold'
 import 'mana-font'
@@ -41,7 +42,7 @@ export const MTGCard = ({
       <Background color={color} onClick={onClick}>
         <Frame>
           <TypeLine color={color}>
-            <BigWords>{title}</BigWords>
+            <Title>{title}</Title>
             {cost && <CastingCost cost={cost} />}
           </TypeLine>
           <Art image_url={image_url} alt="art" color={color} />
