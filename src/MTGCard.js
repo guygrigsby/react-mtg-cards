@@ -35,6 +35,10 @@ export const MTGCard = ({
   flavor,
   cost,
   type,
+  cardNumber,
+  artist,
+  copywrite,
+  set,
   onClick,
 }) => {
   return (
@@ -64,11 +68,11 @@ export const MTGCard = ({
 
           <Footer>
             <BottomLeft>
-              140/184 R<P>OGW &#x2022; EN Wesley Burt</P>
+              {cardNumber} <P>{`${set} ∙ ${artist}`}</P>
             </BottomLeft>
             <BottomCenter />
             <BottomRight>
-              &#x99; &amp; &#169; 2020 Wizards of the Coast
+              {copywrite ? copywrite : '™ & Ⓒ 2016 Wizards of the Coast'}
             </BottomRight>
           </Footer>
         </Frame>
@@ -86,6 +90,9 @@ MTGCard.propTypes = {
   flavor: PropTypes.string,
   cost: PropTypes.string,
   type: PropTypes.string,
+  cardNumber: PropTypes.string,
+  artist: PropTypes.string,
+  copywrite: PropTypes.string,
   onClick: PropTypes.func,
 }
 export default MTGCard

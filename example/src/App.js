@@ -64,6 +64,9 @@ const premades = [
     flavor: 'For the life of every plane, I will keep watch.',
     cost: 'g',
     type: 'Legendary Enchantment',
+    cardNumber: '140/184 R',
+    artist: 'Wesley Burt',
+    set: 'OGW',
   },
   {
     image_url:
