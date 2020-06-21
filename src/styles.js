@@ -93,6 +93,7 @@ export const CardRoot = styled.div`
 export const Frame = styled.div`
   z-index: 1;
   position: relative;
+  height: 108%;
   max-width: 97%;
   left: 1%;
   top: 0.5%;
@@ -146,6 +147,7 @@ Art.propTypes = {
 }
 
 export const TextBox = styled.div`
+  flex: 1 1 auto;
   font-size: 1.2em;
   box-shadow: 0 0 0 5px ${(props) => getCC(props.color)},
     -3px 3px 2px 5px #171314;
@@ -156,7 +158,6 @@ export const TextBox = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: 10px 5px 5px 5px;
-  flex: 1 1 auto;
 `
 
 export const TypeLine = styled.div`
