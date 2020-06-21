@@ -52,9 +52,7 @@ export const MTGCard = ({
           </MiddleTypeLine>
 
           <TextBox color={color}>
-            {text ? (
-              <Description style={{ margin: '5px 1px' }}>{text}</Description>
-            ) : null}
+            {text ? <Description>{text}</Description> : null}
             {textN
               ? textN.map((desc, idx) => {
                   return <Description key={idx}>{desc}</Description>
@@ -64,7 +62,6 @@ export const MTGCard = ({
           </TextBox>
 
           <Footer>
-            F
             <BottomLeft>
               140/184 R<P>OGW &#x2022; EN Wesley Burt</P>
             </BottomLeft>

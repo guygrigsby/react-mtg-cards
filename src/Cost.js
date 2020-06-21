@@ -2,17 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const ManaIcon = styled.i`
-  font-size: 1.1em;
-  flex: 0 0 auto;
-  margin: 3px 3px 0 3px;
-`
+const ManaIcon = styled.i``
 
 const Cost = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-  align-content: stretch;
+  padding: 0 3px 0 0;
 `
 
 const getName = (cost) => {

@@ -46,6 +46,11 @@ export const BottomCenter = styled.div`
 
 export const Description = styled.p`
   font-family: 'Belaren Bold';
+  padding: 5px 1px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 `
 
 export const Footer = styled.div`
@@ -54,13 +59,11 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
 `
-export const P = styled.p`
-  margin-bottom: 5px;
+export const P = styled.div`
+  margin-bottom: 1px;
 `
-export const FlavorText = styled.p`
-  font-family: 'Belaren Bold';
+export const FlavorText = styled(Description)`
   font-style: italic;
-  padding: 10px 0;
 `
 export const BigWords = styled.h1`
   font-family: 'Belaren Bold';
@@ -85,16 +88,11 @@ export const CardRoot = styled.div`
   box-sizing: border-box;
   box-shadow: -8px 9px 16px -3px gray;
   background: #171314;
-  body* > {
-    font-family: 'Belaren Bold';
-    box-sizing: border-box;
-  }
 `
 
 export const Frame = styled.div`
   z-index: 1;
   position: relative;
-  height: 110%;
   max-width: 97%;
   left: 1%;
   top: 0.5%;
@@ -130,11 +128,10 @@ export const Background = styled.div`
 //    -3px 3px 2px 5px #171314;
 //`
 export const Img = styled.img`
+  flex: 0 0 48%;
   object-fit: cover;
-  width: 100%;
-  height: auto;
   overflow: hidden;
-  position: relavtive;
+  position: relative;
   margin: 0 10px;
   box-shadow: 0 0 0 2px #171314, 0 0 0 5px ${(props) => getCC(props.color)};
 `
@@ -149,7 +146,7 @@ Art.propTypes = {
 }
 
 export const TextBox = styled.div`
-  font-size: 1.1em;
+  font-size: 1.2em;
   box-shadow: 0 0 0 5px ${(props) => getCC(props.color)},
     -3px 3px 2px 5px #171314;
   margin: 0 10px;
@@ -158,13 +155,11 @@ export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 5px 6px;
-  flex: 1 0 auto;
+  padding: 10px 5px 5px 5px;
+  flex: 1 1 auto;
 `
 
 export const TypeLine = styled.div`
-  font-size: 1.1em;
-  flex: 1 0 100%
   border-bottom: 4px solid #a9a9a9;
   border-left: 2px solid #a9a9a9;
   border-top: 1px solid #fff;
@@ -177,6 +172,8 @@ export const TypeLine = styled.div`
   margin-left: 5px;
   margin-right: 5px;
 
+  flex: 0 0 4.5%;
+
   overflow: hidden;
   background: linear-gradient(
       0deg,
@@ -186,7 +183,7 @@ export const TypeLine = styled.div`
     url(https://image.ibb.co/jKByZn/tile_bg_1.jpg);
   display: flex;
   align-content: flex-start;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   border-radius: 18px/40px;
   z-index: 2;
@@ -354,6 +351,14 @@ const Reset = styled.div`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
 
   /* End of reset */
 
