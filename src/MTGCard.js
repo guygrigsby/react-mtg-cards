@@ -71,7 +71,7 @@ export const MTGCard = ({
             <BottomLeft>
               {cardNumber}
               <P>
-                {set} <PaintbrushIcon style={{ leftPadding: '3px' }} /> {artist}
+                {set} <PaintbrushIcon /> {artist}
               </P>
             </BottomLeft>
             <BottomCenter />

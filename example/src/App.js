@@ -83,6 +83,9 @@ const premades = [
       '"Beasts of burden indeed. Our burden becomes yours." ~ Dratz the Old',
     cost: '2pp',
     type: 'Legendary Enchantment',
+    cardNumber: '1/1 R',
+    artist: 'Guy J Grigsby',
+    set: 'GJG EN',
   },
 ]
 
