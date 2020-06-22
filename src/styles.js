@@ -15,6 +15,12 @@ const red = '#cc0000'
 const black = '#171314'
 const white = 'white'
 
+export const Artist = styled.span`
+  font-family: 'Belaren Bold';
+  font-variant: small-caps;
+  font-size: 13px;
+`
+
 export const BottomLeft = styled.div`
   flex: 1;
   font-size: 10px;
@@ -26,10 +32,9 @@ export const BottomLeft = styled.div`
 `
 
 export const BottomRight = styled.div`
+  font-family: 'Belaren Bold';
   flex: 1;
-  font-size: 10px;
-  position: relative;
-  top: 6px;
+  font-size: 12px;
   text-align: right;
 `
 export const BottomCenter = styled.div`
@@ -54,7 +59,7 @@ export const Description = styled.p`
 `
 
 export const Footer = styled.div`
-  margin: 5px 4px 0 4px;
+  margin: 5px 5px 0 5px;
   color: white;
   display: flex;
   justify-content: space-between;

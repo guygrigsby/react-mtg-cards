@@ -20,6 +20,7 @@ import {
   BottomRight,
   Description,
   Title,
+  Artist,
 } from './styles'
 import '@saeris/typeface-beleren-bold'
 import 'mana-font'
@@ -71,7 +72,7 @@ export const MTGCard = ({
             <BottomLeft>
               {cardNumber}
               <P>
-                {set} <PaintbrushIcon /> {artist}
+                {set} <PaintbrushIcon /> <Artist>{artist}</Artist>
               </P>
             </BottomLeft>
             <BottomCenter />
