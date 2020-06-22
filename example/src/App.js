@@ -66,7 +66,7 @@ const premades = [
     type: 'Legendary Enchantment',
     cardNumber: '140/184 R',
     artist: 'Wesley Burt',
-    set: 'OGW',
+    set: 'OGW EN',
   },
   {
     image_url:

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CastingCost from './Cost.js'
+import PaintbrushIcon from './PaintbrushIcon.js'
 import {
   CardRoot,
   Background,
@@ -68,7 +69,10 @@ export const MTGCard = ({
 
           <Footer>
             <BottomLeft>
-              {cardNumber} <P>{`${set} ∙ ${artist}`}</P>
+              {cardNumber}
+              <P>
+                {set} <PaintbrushIcon style={{ leftPadding: '3px' }} /> {artist}
+              </P>
             </BottomLeft>
             <BottomCenter />
             <BottomRight>
@@ -93,6 +97,7 @@ MTGCard.propTypes = {
   cardNumber: PropTypes.string,
   artist: PropTypes.string,
   copywrite: PropTypes.string,
+  set: PropTypes.string,
   onClick: PropTypes.func,
 }
 export default MTGCard
