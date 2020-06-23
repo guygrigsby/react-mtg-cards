@@ -25,7 +25,10 @@ const Item = styled.div`
 `
 const createPNG = (title, node) => {
   const options = {
-    styles: {},
+    styles: {
+      width: '500px',
+      height: '700px',
+    },
   }
   console.log('node', node)
   htmlToImage.toPng(node, options).then(function (dataUrl) {

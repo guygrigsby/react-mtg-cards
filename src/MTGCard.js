@@ -21,6 +21,7 @@ import {
   Description,
   Title,
   Artist,
+  ImageFrame,
 } from './styles'
 import '@saeris/typeface-beleren-bold'
 import 'mana-font'
@@ -47,43 +48,45 @@ export const MTGCard = (props, ref) => {
   } = props
   return (
     <CardRoot color={color}>
-      <Background color={color} onClick={onClick}>
-        <Frame ref={ref}>
-          <TypeLine color={color}>
-            <Title>{title}</Title>
-            {cost && <CastingCost cost={cost} />}
-          </TypeLine>
-          <Art image_url={image_url} alt="art" color={color} />
+      <ImageFrame ref={ref}>
+        <Background color={color} onClick={onClick}>
+          <Frame>
+            <TypeLine color={color}>
+              <Title>{title}</Title>
+              {cost && <CastingCost cost={cost} />}
+            </TypeLine>
+            <Art image_url={image_url} alt="art" color={color} />
 
-          <MiddleTypeLine color={color}>
-            <BigWords>{type}</BigWords>
-            <SetIcon src={set_url} alt="OGWIcon" />
-          </MiddleTypeLine>
+            <MiddleTypeLine color={color}>
+              <BigWords>{type}</BigWords>
+              <SetIcon src={set_url} alt="OGWIcon" />
+            </MiddleTypeLine>
 
-          <TextBox color={color}>
-            {text ? <Description>{text}</Description> : null}
-            {textN
-              ? textN.map((desc, idx) => {
-                  return <Description key={idx}>{desc}</Description>
-                })
-              : null}
-            {flavor ? <FlavorText>{flavor}</FlavorText> : null}
-          </TextBox>
+            <TextBox color={color}>
+              {text ? <Description>{text}</Description> : null}
+              {textN
+                ? textN.map((desc, idx) => {
+                    return <Description key={idx}>{desc}</Description>
+                  })
+                : null}
+              {flavor ? <FlavorText>{flavor}</FlavorText> : null}
+            </TextBox>
 
-          <Footer>
-            <BottomLeft>
-              {cardNumber}
-              <P>
-                {set} <PaintbrushIcon /> <Artist>{artist}</Artist>
-              </P>
-            </BottomLeft>
-            <BottomCenter />
-            <BottomRight>
-              {copywrite ? copywrite : '™ & Ⓒ 2016 Wizards of the Coast'}
-            </BottomRight>
-          </Footer>
-        </Frame>
-      </Background>
+            <Footer>
+              <BottomLeft>
+                {cardNumber}
+                <P>
+                  {set} <PaintbrushIcon /> <Artist>{artist}</Artist>
+                </P>
+              </BottomLeft>
+              <BottomCenter />
+              <BottomRight>
+                {copywrite ? copywrite : '™ & Ⓒ 2016 Wizards of the Coast'}
+              </BottomRight>
+            </Footer>
+          </Frame>
+        </Background>
+      </ImageFrame>
     </CardRoot>
   )
 }
@@ -103,5 +106,5 @@ MTGCard.propTypes = {
   set: PropTypes.string,
   onClick: PropTypes.func,
 }
-//MTGCard.displayName = 'MTGCard'
+MTGCard.displayName = 'MTGCard'
 export default React.forwardRef(MTGCard)

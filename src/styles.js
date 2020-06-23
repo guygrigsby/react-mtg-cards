@@ -86,15 +86,13 @@ export const SetIcon = styled.img`
 `
 //${() => cssReset()}
 export const CardRoot = styled.div`
-  border: 1px solid black;
   width: 500px;
   height: 700px;
+  border: 1px solid black;
   margin: 0 auto;
   margin-top: 56px;
-  border-radius: 25px;
-  box-sizing: border-box;
   box-shadow: -8px 9px 16px -3px gray;
-  background: #171314;
+  border-radius: 25px;
 `
 
 export const Frame = styled.div`
@@ -107,6 +105,14 @@ export const Frame = styled.div`
   left: 1.2%;
   display: flex;
   flex-direction: column;
+`
+export const ImageFrame = styled.div`
+  padding: 6px 0 6px 0;
+  height: 100%;
+  width: auto;
+  background: #171314;
+  box-sizing: border-box;
+  border-radius: 25px;
 `
 //background-image: url(https://image.ibb.co/e1XKAS/green_background.jpg);
 //background-image: url(../images/bg/${(props) => props.color}.png);
