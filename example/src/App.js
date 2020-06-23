@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { premades } from './premades.js'
+import htmlToImage from 'html-to-image'
+import download from 'downloadjs'
 import MTGCard, { cardColors } from 'react-mtg-cards'
 
 const TextBox = styled.textarea`
@@ -20,79 +23,26 @@ const Item = styled.div`
   flex: 1;
   margin: 1em;
 `
-
-const premades = [
-  {
-    image_url: 'https://i.redd.it/sw8xl7bxutk31.jpg',
-    set_url:
-      'https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=EVE&size=small&rarity=C',
-    color: 'blue',
-    title: 'Banishing Knack',
-    text: `Until end of turn, target creature gains "{tap}: Return target nonland permanent to its owner's hand."`,
-    type: 'Instant',
-    flavor: `Suddenly he realized that everything was connected by invisible strings, strings that could be pulled—or cut.`,
-  },
-  {
-    image_url:
-      'https://magicuntapped.com/media/k2/items/cache/e2bf3b11df0b872112757f1c2fee6e32_XL.jpg',
-    set_url:
-      'https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=2U&size=small&rarity=R',
-    color: 'none',
-    title: 'Black Lotus',
-    text: 'Sacrifice Black Lotus: Add three mana of any one color.',
-    type: 'Artifact',
-  },
-  {
-    image_url:
-      'https://upload.wikimedia.org/wikipedia/commons/9/9f/Pahoeoe_fountain_edit2.jpg',
-    set_url: 'https://image.ibb.co/kzaLjn/OGW_R.png',
-    color: 'red',
-    title: 'Lavaflow',
-
-    type: 'Basic Land - Mountain',
-  },
-  {
-    image_url: 'https://image.ibb.co/fqdLEn/nissa.jpg',
-    set_url: 'https://image.ibb.co/kzaLjn/OGW_R.png',
-    color: 'green',
-    title: 'Oath of Nissa',
-    text:
-      'When Oath of Nissa enters the battlefield, look at the top three cards of your library. You may reveal a creature, land, or planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in any order.',
-    textN: [
-      'You may spend mana as though it were mana of any color to cast planeswalker spells.',
-    ],
-    flavor: 'For the life of every plane, I will keep watch.',
-    cost: 'g',
-    type: 'Legendary Enchantment',
-    cardNumber: '140/184 R',
-    artist: 'Wesley Burt',
-    set: 'OGW EN',
-  },
-  {
-    image_url:
-      'https://media.gettyimages.com/photos/donkey-on-laughing-on-field-against-dry-plants-picture-id667764513?s=612x612',
-    set_url: 'https://image.ibb.co/kzaLjn/OGW_R.png',
-    color: 'black',
-    title: 'Desecration of Donkeys',
-    text:
-      'Desecration of Donkeys enters the battlefield with 7 desecration counters on it. Each upkeep, remove a counter. When there are zero counters left, you sacrifice all your creatures.',
-    textN: [
-      'Each time you tap a Swamp for mana, add an extra black mana and create a 2/2 Rabbit Donkey token.',
-    ],
-    flavor:
-      '"Beasts of burden indeed. Our burden becomes yours." ~ Dratz the Old',
-    cost: '2pp',
-    type: 'Legendary Enchantment',
-    cardNumber: '1/1 R',
-    artist: 'Guy J Grigsby',
-    set: 'GJG EN',
-  },
-]
+const createPNG = (title, node) => {
+  const options = {
+    styles: {},
+  }
+  console.log('node', node)
+  htmlToImage.toPng(node, options).then(function (dataUrl) {
+    var img = new Image()
+    img.src = dataUrl
+    document.body.appendChild(img)
+    download(dataUrl, `${title}.png`)
+    return <img width="100" height="200" src={dataUrl} alt={`card "${title}`} />
+  })
+}
 
 const initialState = premades[3]
 
 const App = () => {
   const [cardState, setCardState] = React.useState(initialState)
+  const [jpg, setJpg] = React.useState(null)
+  const cardRef = React.useRef()
 
   const update = (e) => {
     const key = e.target.name
@@ -118,6 +68,8 @@ const App = () => {
   }
 
   console.log('cardState', cardState)
+
+  console.log('ref after create ', cardRef)
 
   return (
     <Container
@@ -239,6 +191,13 @@ const App = () => {
             })}
           </select>
         </Item>
+        <Item>
+          <button
+            onClick={() => setJpg(createPNG(cardState.title, cardRef.current))}
+          >
+            Download
+          </button>
+        </Item>
       </Container>
       <Container
         style={{
@@ -249,9 +208,9 @@ const App = () => {
           height: '100%',
         }}
       >
-        <MTGCard {...cardState} />
+        <MTGCard ref={cardRef} {...cardState} />
       </Container>
-      <Item>Foot for room</Item>
+      <Item>{jpg}</Item>
     </Container>
   )
 }

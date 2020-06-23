@@ -27,26 +27,28 @@ import 'mana-font'
 
 export const cardColors = ['blue', 'red', 'green', 'white', 'black']
 
-export const MTGCard = ({
-  image_url,
-  set_url,
-  title,
-  color,
-  text,
-  textN,
-  flavor,
-  cost,
-  type,
-  cardNumber,
-  artist,
-  copywrite,
-  set,
-  onClick,
-}) => {
+//export const MTGCard = (props) => {
+export const MTGCard = (props, ref) => {
+  const {
+    image_url,
+    set_url,
+    title,
+    color,
+    text,
+    textN,
+    flavor,
+    cost,
+    type,
+    cardNumber,
+    artist,
+    copywrite,
+    set,
+    onClick,
+  } = props
   return (
     <CardRoot color={color}>
       <Background color={color} onClick={onClick}>
-        <Frame>
+        <Frame ref={ref}>
           <TypeLine color={color}>
             <Title>{title}</Title>
             {cost && <CastingCost cost={cost} />}
@@ -101,4 +103,5 @@ MTGCard.propTypes = {
   set: PropTypes.string,
   onClick: PropTypes.func,
 }
-export default MTGCard
+//MTGCard.displayName = 'MTGCard'
+export default React.forwardRef(MTGCard)
