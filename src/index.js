@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './MTGCard'
-import CssReset from './styles.js'
-export { default as CastingCost } from './Cost'
+import { CssReset } from './styles.js'
+import CastingCost from './Cost'
 
 const MTGCard = (props) => {
   return (
@@ -11,5 +11,6 @@ const MTGCard = (props) => {
     </React.Fragment>
   )
 }
+export { CssReset, CastingCost }
 
 export default MTGCard

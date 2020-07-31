@@ -2,4 +2,4 @@ build:
 	yarn build
 
 publish:
-	yarn version --patch
+	yarn publish --tag next

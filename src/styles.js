@@ -377,6 +377,4 @@ const Reset = styled.div`
 v2.0 | 20110126
 License: none (public domain)
  */
-export const CssReset = () => {
-  return <Reset />
-}
+export const CssReset = () => <Reset />
